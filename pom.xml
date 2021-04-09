@@ -16,6 +16,52 @@
         <module>webapp</module>
     </modules>
 
+    <properties>
+        <velocity.version>1.5</velocity.version>
+        <spring.version>2.0.7</spring.version>
+        <mysql.version>5.1.26</mysql.version>
+        <hibernate-annotations.version>3.3.0.ga</hibernate-annotations.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--spring相关-->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <!--hibernate相关-->
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate</artifactId>
+                <version>3.2.5.ga</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>javax.transaction</groupId>
+                        <artifactId>jta</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-annotations</artifactId>
+                <version>${hibernate-annotations.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-commons-annotations</artifactId>
+                <version>3.3.0.ga</version>
+            </dependency>
+            <!--模本引擎-->
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity</artifactId>
+                <version>${velocity.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
