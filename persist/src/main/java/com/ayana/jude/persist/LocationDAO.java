@@ -13,6 +13,7 @@ public class LocationDAO extends HibernateDaoSupport {
 
     public LocationDAO() {}
 
+	@SuppressWarnings("all")
     public Location findByZip(final String zip) {
     	return (Location) getHibernateTemplate().execute(new HibernateCallback() {
 			public Object doInHibernate(Session session) {

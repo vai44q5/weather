@@ -22,7 +22,7 @@ public class WeatherDAO extends HibernateDaoSupport {
     	return (Weather) getHibernateTemplate().load( Weather.class, id);
     }
 
-    @SuppressWarnings("unchecked")
+	@SuppressWarnings("all")
 	public List<Weather> recentForLocation( final Location location ) {
     	return (List<Weather>) getHibernateTemplate().execute(new HibernateCallback() {
 			public Object doInHibernate(Session session) {
